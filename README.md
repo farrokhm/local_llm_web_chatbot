@@ -1,4 +1,4 @@
-# Ollama Web UI Chatbot
+# Web UI Chatbot
 
 A simple, intuitive web-based chat interface for interacting with local language models through the Ollama API. This project provides a lightweight FastAPI backend and a clean, responsive vanilla JavaScript frontend, making it an excellent starting point for building custom AI chat applications.
 
@@ -94,5 +94,4 @@ poetry run pytest
 
 ## License
 
-This project is licensed under the MIT License. See the `LICENSE` file for details.
-*(Note: You will need to create a `LICENSE` file with the MIT License text if you choose to use it.)*
+This project is licensed under the MIT License.
