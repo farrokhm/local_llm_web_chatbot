@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>AI Chatbot</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Inter">
+  <style>
+    body {
+      background-color: #121212;
+      color: #e0e0e0;
+      font-family: 'Inter', sans-serif;
+      padding: 2rem;
+      max-width: 600px;
+      margin: auto;
+    }
+    .settings {
+      display: flex;
+      justify-content: space-around;
+      margin-bottom: 1rem;
+      padding: 0.5rem;
+      background-color: #2a2a2a;
+      border-radius: 5px;
+    }
+    .settings div {
+      display: flex;
+      align-items: center;
+    }
+    .settings label {
+      margin-right: 0.5rem;
+    }
+    select, input[type="range"] {
+      background-color: #333;
+      color: #e0e0e0;
+      border: 1px solid #555;
+      border-radius: 5px;
+      padding: 0.25rem;
+    }
+    #chat {
+      white-space: pre-wrap;
+      margin-bottom: 1rem;
+      background-color: #1a1a1a;
+      padding: 1rem;
+      border-radius: 5px;
+      height: 300px;
+      overflow-y: auto;
+    }
+    .input-area {
+      display: flex;
+    }
+    #message {
+      flex-grow: 1;
+      background-color: #333;
+      color: #e0e0e0;
+      border: 1px solid #555;
+    }
+    input, button {
+      padding: 0.5rem;
+      border-radius: 5px;
+      border: none;
+      margin-right: 0.5rem;
+    }
+    button {
+      background: #00adb5;
+      color: white;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+  <h2>🤖 AI Chatbot (Ollama)</h2>
+
+  <div class="settings">
+    <div>
+      <label for="model-select">Model:</label>
+      <select id="model-select">
+        <option value="tinyllama" selected>TinyLlama</option>
+        <option value="llama3">Llama 3</option>
+        <option value="mistral">Mistral</option>
+        <option value="gemma">Gemma</option>
+      </select>
+    </div>
+    <div>
+      <label for="temperature-slider">Temperature:</label>
+      <input type="range" id="temperature-slider" min="0" max="2" step="0.1" value="0.7">
+      <span id="temperature-value">0.7</span>
+    </div>
+    <div>
+      <label for="stream-checkbox">Stream:</label>
+      <input type="checkbox" id="stream-checkbox">
+    </div>
+  </div>
+
+  <div id="chat"></div>
+  <div class="input-area">
+    <input type="text" id="message" placeholder="Type your message..." />
+    <button onclick="sendMessage()">Send</button>
+    <button onclick="resetChat()">Reset</button>
+  </div>
+
+  <script src="script.js?v=4"></script> <!-- Updated script version -->
+</body>
+</html>
